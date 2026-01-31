@@ -1,0 +1,9 @@
+@use 'lib' as *;
+
+.custom-input {
+	$self: &;
+
+	padding: 16px 32px;
+	background: $btn-secondary-hover-bg;
+	color: inherit;
+}

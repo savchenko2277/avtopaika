@@ -17,13 +17,19 @@
 
 // Подключение шрифтов
 
-// @include font-face("filename", "name", value);
+@include font-face("Manrope-ExtraLight", "Manrope", 200);
+@include font-face("Manrope-Light", "Manrope", 300);
+@include font-face("Manrope-Regular", "Manrope", 400);
+@include font-face("Manrope-Medium", "Manrope", 500);
+@include font-face("Manrope-SemiBold", "Manrope", 600);
+@include font-face("Manrope-Bold", "Manrope", 700);
+@include font-face("Manrope-ExtraBold", "Manrope", 800);
 
 body, html {
-	background-color: var(--background);
-	font-size: var(--size);
-	color: var(--text);
-	font-family: "Inter";
+	background-color: $bg-body;
+	font-size: 16px;
+	color: $text-primary;
+	font-family: "Manrope";
 	line-height: 1.2;
 	font-weight: 400;
 	display: flex;

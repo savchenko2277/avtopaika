@@ -1,0 +1,58 @@
+@use 'lib' as *;
+
+.repair {
+	$self: &;
+
+	padding: fluid(64px, 48px) 0;
+	background: $bg-section;
+
+	&__container {}
+
+	&__title {
+		margin-bottom: fluid(48px, 32px);
+	}
+
+	&__items {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		align-items: start;
+		gap: 24px fluid(32px, 8px);
+
+		@include media("<=md") {
+			grid-template-columns: repeat(3, 1fr)
+		}
+
+		@include media("<=xs") {
+			grid-template-columns: repeat(2, 1fr)
+		}
+	}
+
+	&__item {
+		@include flex-center;
+
+		flex-direction: column;
+		gap: 24px;
+
+		&:hover {
+			#{$self}__item-img {
+				transform: scale(1.05);
+			}
+		}
+	}
+
+	&__item-img {
+		width: 100%;
+		aspect-ratio: 16 / 9;
+		object-fit: cover;
+		overflow: hidden;
+		border-radius: $radius-sm;
+		transition: all $transition-base;
+	}
+
+	&__item-title {
+		font-weight: 700;
+		font-size: fluid(20px, 18px);
+		text-align: center;
+	}
+
+}

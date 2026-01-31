@@ -1,0 +1,99 @@
+@use 'lib' as *;
+
+.callback {
+	$self: &;
+
+	padding: fluid(128px, 64px) 0;
+	position: relative;
+
+	&__bg {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+
+		&::after {
+			content: '';
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba($color: #000000, $alpha: 0.6);
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__container {
+		position: relative;
+		z-index: 1;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&__title {
+		margin-bottom: 48px;
+		text-align: center;
+	}
+
+	&__desc {
+		font-size: fluid(20px, 16px);
+		font-weight: 600;
+		line-height: 150%;
+		margin-bottom: 48px;
+		text-align: center;
+	}
+
+	&__form {
+		max-width: 768px;
+		width: 100%;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 16px;
+
+
+	}
+
+	&__label {
+		.custom-input {
+			width: 100%;
+		}
+
+		@include media("<=xs") {
+			grid-column: auto / span 2;
+		}
+	}
+
+	&__label-title {
+		margin-bottom: 8px;
+		font-weight: 700;
+	}
+
+	&__button {
+		@include flex-center;
+		width: 100%;
+		grid-column: auto / span 2;
+		border-radius: $radius-sm;
+		color: $brand-gray;
+		font-size: 18px;
+		font-weight: 700;
+		padding: 16px 32px;
+		background: $btn-primary-bg;
+		transition: all $transition-base;
+
+		@include media("<=xs") {
+			width: 100%;
+		}
+
+		&:hover {
+			color: $text-primary;
+			background: $btn-secondary-hover-bg;
+		}
+	}
+
+}

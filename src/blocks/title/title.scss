@@ -1,0 +1,12 @@
+@use 'lib' as *;
+
+.title {
+	$self: &;
+
+	font-size: fluid(32px, 24px);
+	font-weight: 700;
+	line-height: 150%;
+	padding-bottom: 24px;
+	border-bottom: 1px solid $brand-yellow-dark;
+	width: 100%;
+}

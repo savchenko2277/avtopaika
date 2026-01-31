@@ -1,0 +1,134 @@
+@use 'lib' as *;
+
+.promo {
+	$self: &;
+
+	position: relative;
+	overflow: hidden;
+
+	&__swiper.swiper {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+
+		&::after {
+			content: '';
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba($color: #000000, $alpha: 0.6);
+			z-index: 10;
+		}
+
+		.swiper-wrapper {
+			height: 100%;
+			width: 100%;
+		}
+
+		.swiper-slide {
+			position: relative;
+			height: 100%;
+			width: 100%;
+
+			img {
+				position: absolute;
+				inset: 0;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+
+	&__container {
+		padding: fluid(128px, 64px) 0;
+		position: relative;
+		z-index: 1;
+		display: flex;
+		flex-direction: column;
+		gap: 32px;
+	}
+
+	&__title {
+		font-size: fluid(48px, 32px);
+		font-weight: 700;
+		max-width: 768px;
+	}
+
+	&__desc {
+		font-size: fluid(18px, 16px);
+		font-weight: 500;
+	}
+
+	&__list {
+		padding-left: 24px;
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+
+	&__list-item {
+		list-style: disc;
+		font-weight: 500;
+	}
+
+	&__buttons {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 16px 24px;
+	}
+
+	&__button {
+		@include flex-center;
+
+		width: fit-content;
+		border-radius: $radius-sm;
+		color: $brand-gray;
+		font-size: 18px;
+		font-weight: 700;
+		padding: 16px 32px;
+		background: $btn-primary-bg;
+		transition: all $transition-base;
+
+		@include media("<=xs") {
+			width: 100%;
+		}
+
+		&:hover {
+			color: $text-primary;
+			background: $btn-secondary-hover-bg;
+		}
+	}
+
+	&__callback {
+
+	}
+
+	&__whatsapp {
+		transition: all $transition-base;
+
+		&:hover {
+			opacity: 0.7;
+		}
+
+		img {
+			width: 32px; height: 32px;
+			object-fit: cover;
+		}
+	}
+
+	&__phone {
+		font-size: 18px;
+		font-weight: 700;
+		transition: all $transition-base;
+
+		&:hover {
+			color: $text-muted;
+		}
+	}
+
+}

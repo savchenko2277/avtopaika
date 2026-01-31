@@ -1,0 +1,52 @@
+@use 'lib' as *;
+
+.work {
+	$self: &;
+
+	padding: fluid(64px, 48px) 0;
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&__title {
+		margin-bottom: 48px;
+		text-align: center;
+	}
+
+	&__items {
+		max-width: 1280px;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 32px fluid(48px, 24px);
+
+		@include media("<=sm") {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 24px;
+	}
+
+	&__item-number {
+		color: $brand-yellow-dark;
+		font-weight: 700;
+		font-size: fluid(96px, 32px);
+		line-height: 90%;
+	}
+
+	&__item-text {
+		font-weight: 700;
+		font-size: fluid(22px, 16px);
+		line-height: 90%;
+		line-height: 150%;
+		text-align: center;
+	}
+
+}
